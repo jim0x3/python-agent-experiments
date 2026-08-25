@@ -36,7 +36,6 @@ def main():
         },
     }]
 
-    # Messages array
     messages = [{"role": "user", "content": args.p}]
 
     while True:
@@ -50,7 +49,6 @@ def main():
             raise RuntimeError("no choices in response")
         print("Logs from your program will appear here!", file=sys.stderr)
 
-        # Get the message
         msg = chat.choices[0].message
 
         if not msg.tool_calls:
