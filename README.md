@@ -12,7 +12,10 @@ This is a starter project built to learn how agent loops and function calling wo
 - Return tool result
 - Repeat until final answer
 
-### Part 2: Coding Agent Harness CLI
+
+## Part 2: Coding Agent Harness CLI
+
+### Coding Agent Harness CLI:
 - Wraps that loop in a reusable CLI runtime for coding tasks
 - Provides coding tools (read/write/search/list/run tests)
 - Enforces guardrails (workspace scope, max steps, error handling)
