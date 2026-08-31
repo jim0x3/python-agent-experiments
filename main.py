@@ -13,11 +13,10 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("-p", required=True)
     args = p.parse_args()
-
     if not API_KEY:
         raise RuntimeError("OPENROUTER_API_KEY is not set")
+        
     client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
-
     tools = [{
         "type": "function",
         "function": {
@@ -35,7 +34,6 @@ def main():
             },
         },
     }]
-
     messages = [{"role": "user", "content": args.p}]
 
     while True:
@@ -44,26 +42,20 @@ def main():
             messages=messages,
             tools=tools,
         )
-
         if not chat.choices or len(chat.choices) == 0:
             raise RuntimeError("no choices in response")
         print("Logs from your program will appear here!", file=sys.stderr)
-
         msg = chat.choices[0].message
-
         if not msg.tool_calls:
             sys.stdout.write((msg.content or "").strip())
             sys.stdout.write("\n")
             break
-
         messages.append(msg)
-
         for t in msg.tool_calls:
             if t.function.name == "Read":
                 fArgs = json.loads(t.function.arguments)
                 with open(fArgs["file_path"], "r") as file:
                     content = file.read()
-
                 messages.append(
                     {
                         "role": "tool",
