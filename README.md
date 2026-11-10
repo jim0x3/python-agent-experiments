@@ -1,8 +1,8 @@
-# Coding Agent Harness CLI
+# python-agent-experiments
 
-A bare-bones experimental AI agent loop written in Python. It sends a prompt to an LLM via OpenRouter, lets the model read local files using tool calls if needed, and prints the final answer.
+A experimental AI agent loop written in Python. It sends a prompt to an LLM via OpenRouter, lets the model read local files using tool calls if needed, and prints the final answer.
 
-This is a starter project built to learn how agent loops and function calling work under the hood, with the goal of expanding it into a full CLI coding assistant.
+This is a starter project built to learn how agent loops and function calling work under the hood....
 
 ## Part 1: Agent Loop
 
