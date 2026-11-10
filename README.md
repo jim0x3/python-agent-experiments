@@ -4,7 +4,7 @@ A experimental AI agent loop written in Python. It sends a prompt to an LLM via 
 
 This is a starter project built to learn how agent loops and function calling work under the hood....
 
-## Part 1: Agent Loop
+## Agent Loop
 
 ### Agent loop:
 - Call model
